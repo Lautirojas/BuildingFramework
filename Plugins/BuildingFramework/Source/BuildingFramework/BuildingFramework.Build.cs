@@ -4,50 +4,57 @@ using UnrealBuildTool;
 
 public class BuildingFramework : ModuleRules
 {
-	public BuildingFramework(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		
-		PublicIncludePaths.AddRange(
-			new string[] {
-				// ... add public include paths required here ...
-			}
-			);
-				
-		
-		PrivateIncludePaths.AddRange(
-			new string[] {
-				// ... add other private include paths required here ...
-			}
-			);
-			
-		
-		PublicDependencyModuleNames.AddRange(
-			new string[]
-			{
+    public BuildingFramework(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+        PublicIncludePaths.AddRange(
+            new string[]
+            {
+            }
+        );
+
+        PrivateIncludePaths.AddRange(
+            new string[]
+            {
+            }
+        );
+
+        PublicDependencyModuleNames.AddRange(
+            new string[]
+            {
+				// Core
 				"Core",
-				// ... add other public dependencies that you statically link with here ...
-			}
-			);
-			
-		
-		PrivateDependencyModuleNames.AddRange(
-			new string[]
-			{
+
+				// Unreal Core Systems
 				"CoreUObject",
-				"Engine",
+                "Engine",
+
+				// UI
 				"Slate",
-				"SlateCore",
-				// ... add private dependencies that you statically link with here ...	
+                "SlateCore",
+                "UMG",
+
+				// Networking
+				"NetCore",
+                "Networking",
+
+				// Gameplay Tags 
+				"GameplayTags",
+            }
+        );
+
+        PrivateDependencyModuleNames.AddRange(
+            new string[]
+            {
+            }
+        );
+
+        DynamicallyLoadedModuleNames.AddRange(
+            new string[]
+            {
+				// Steam/EOS/etc later
 			}
-			);
-		
-		
-		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
-				// ... add any modules that your module loads dynamically here ...
-			}
-			);
-	}
+        );
+    }
 }
